@@ -6,6 +6,9 @@ let {nroute}=require("./allroute/noteroute")
 app.use(express.json())
 app.use(lsroute)
 app.use(nroute)
+app.get("/resume",(req,res)=>{
+    res.download("./resume.js")
+})
 app.listen(8080,async()=>{
     try {
         await connect
